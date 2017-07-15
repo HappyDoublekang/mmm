@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--先引入第三方的框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/moneyproduct.less">
+    <!--编译less的js-->
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <div class="back">
+            <a href="#" class="icon-back">
+                <
+            </a>
+        </div>
+        <h1>
+           国内折扣
+        </h1>
+        <a href="#" class="app">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <!-- 商品列表 -->
+   <section id="section">
+   </section>
+    <!--底部区域--> 
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a>
+            --掌上比价平台
+        </p>
+        <p>
+            m.manmanbuy.com
+        </p>
+    </footer>
+    <!-- 省钱控商品详情模板 -->
+<script type="text/html" id="moneyProduct">
+    {{each result as value i}}
+        <h3>{{value.productName}}</h3>
+    <h5>
+        <span>{{value.productFrom}}</span>
+        <span>{{value.productTime}}</span>
+        <span>{{value.productTips}}</span>
+    </h5>
+    <h4>{{value.productPinkage}}</h4>
+    <div class="info">
+        <div class="sm">
+            {{#value.productImgSm}}
+        </div>
+           <p>
+               {{value.productInfo}}
+           </p>
+           <p>
+               <br>
+           </p>
+            <p>
+                {{value.productInfo1}}
+            </p>
+            <p>
+                <br>
+            </p>
+        <div class="lg">
+            {{#value.productImgLg}}
+        </div>
+        {{#value.productCity}}
+        <div class="buy">
+            <a>前往购买</a>
+        </div>
+    </div>
+    <div class="comment">
+        {{#value.productComment}}
+    </div>
+    {{/each}}
+</script>
+    <!--先引入jquery Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!--再引入Bootstrap的js-->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+    <!--最后引入自己的js文件-->
+    <script src="js/moneyproduct.js"></script>
+</body>
+</html>

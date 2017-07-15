@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--先引入第三方的框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet/less" href="less/base.css">
+    <link rel="stylesheet/less" href="less/category.less">
+    <!--编译less的js-->
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <a href="#" class="logo">
+            <img src="images/header_logo.png" alt="">
+        </a>
+        <a href="#" class="app">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <!--搜索区域-->
+    <section id="search">
+        <form action="#">
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <!--分类区域-->
+    <section id="category">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          大家电
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          手机数码
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          电脑办公
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+            <div class="col-xs-4"><a href="#">电视</a></div>
+            <div class="col-xs-4"><a href="#">空调</a></div>
+            <div class="col-xs-4"><a href="#">影院</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!--底部区域--> 
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a>
+            --掌上比价平台
+        </p>
+        <p>
+            m.manmanbuy.com
+        </p>
+    </footer>
+     
+    <!--分类标题-->
+    <script type="text/html" id="categoryTitleTmp">
+    {{each result as value i}}
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <!--collapse不能写死要动态生成collapse{{i}} href属性对应的是列表的id-->
+            <a role="button" data-toggle="collapse" data-parent="#accordion" 
+            href="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne" data-titleId="{{value.titleId}}">
+              {{value.title}}
+            </a>
+          </h4>
+        </div>
+        <!--生成标题的同时生成样式不然会打不开-->
+        <div id="collapse{{i}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    </script>
+    <!--分类列表-->
+    <script type='text/html' id="categoryTmp"> 
+        <div class="row">
+            {{each result as value i}}
+            <!--category是参数名 {{value.category}}是参数值-->
+            <div class="col-xs-4"><a href="productlist.html?categoryid={{value.categoryId}}&pageid=1">{{value.category}}</a></div>
+            {{/each}}
+        </div>
+    </script>
+    <!--先引入jquery Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!--再引入Bootstrap的js-->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+    <!--最后引入自己的js文件-->
+    <script src="js/category.js"></script>
+</body>
+</html>

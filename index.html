@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--先引入第三方的框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet/less" href="less/base.css">
+    <link rel="stylesheet/less" href="less/index.less">
+    <!--编译less的js-->
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <a href="#" class="logo">
+            <img src="images/header_logo.png" alt="">
+        </a>
+        <a href="#" class="app">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <!--搜索区域-->
+    <section id="search">
+        <form action="#">
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <!--菜单区域-->
+    <section id="menu">
+        <!--栅格布局-->
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_search.png" alt="">
+                    <p>比价搜索</p>
+                </a> 
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_cu.png" alt="">
+                    <p>省钱控</p>
+                </a>              
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_coudanpin.png" alt="">
+                    <p>国内折扣</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_bcj.png" alt="">
+                    <p>白菜价</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/haitao.png" alt="">
+                    <p>海淘折扣</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_pp.png" alt="">
+                    <p>小时风云榜</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_trend.png" alt="">
+                    <p>查历史价</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/gengduo.png" alt="">
+                    <p>更多</p>
+                </a>  
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_temai.png" alt="">
+                    <p>优惠券</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_coudanpin.png" alt="">
+                    <p>凑单品</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_kb.png" alt="">
+                    <p>口碑排行</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="images/ic_mall.png" alt="">
+                    <p>商城导航</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--商品推荐-->
+    <section id="recommen">
+        <div class="recommen-title">
+            <h5>超值折扣推荐</h5>
+            <img src="images/more.png" alt="">
+        </div>
+        <div class="recommen-list">
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img src="images/ic_bcj.png" alt="...">
+                </a>
+                <div class="media-body">
+                    <h5>移动端凑单品：海天 鲜味 生抽 1.28L</h5>
+                    <p class="price">10.9元</p>
+                    <span class="from">京东商城 | 10-25 14:10</span>
+                    <span class="comment"><i class="icon-comment"></i> 1</span>
+                </div>
+            </div>
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img src="images/ic_bcj.png" alt="...">
+                </a>
+                <div class="media-body">
+                    <h5>移动端凑单品：海天 鲜味 生抽 1.28L</h5>
+                    <p class="price">10.9元</p>
+                    <span class="from">京东商城 | 10-25 14:10</span>
+                    <span class="comment"><i class="icon-comment"></i>   1</span>
+                </div>
+            </div>
+        </div>
+        <div class="recommen-more">
+            <a href="#">更多优惠信息>></a>
+        </div>
+        <div class="recommen-title">
+            <h5>品牌排行</h5>
+            <img src="images/more.png" alt="">
+        </div>
+    </section>
+    <!--底部区域--> 
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a>
+            --掌上比价平台
+        </p>
+        <p>
+            m.manmanbuy.com
+        </p>
+    </footer>
+    <!--动态生成menu-->
+    <script type="text/html" id="menuTmp">
+        <div class="row">
+            {{each result as value i}}
+            <div class="col-xs-3">
+                <a href="{{value.titlehref}}">
+                    {{#value.img}}
+                    <p>{{value.name}}</p>
+                </a> 
+            </div>
+            {{/each}}
+        </div>    
+    </script>
+    <!--动态生成商品推荐-->
+    <script type="text/html" id="recommenTmp">
+        {{each result as value i}}
+            <div class="media">
+                <a class="media-left" href="#">
+                    {{#value.productImgSm}}
+                </a>
+                <div class="media-body">
+                    <h5>{{value.productName}}</h5>
+                    <p class="price">{{value.productPinkage}}</p>
+                    <span class="from">{{value.productFrom}} | {{value.productTime}}</span>
+                    <span class="comment"><i class="icon-comment"></i> {{value.productComCount.replace("有","").replace('人评论',"")}}
+                    </span>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+    <!--先引入jquery Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!--再引入Bootstrap的js-->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+    <!--最后引入自己的js文件-->
+    <script src="js/index.js"></script>
+</body>
+</html>

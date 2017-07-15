@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--先引入第三方的框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/baicaijia.less">
+    <!--编译less的js-->
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <div class="back">
+            <a href="#" class="icon-back">
+                <
+            </a>
+        </div>
+        <h1>
+           白菜价-淘宝内部券
+        </h1>
+        <a href="#" class="app">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <main class="coupon-title">
+        <div class="bcj-head-cat">
+            <div class="bcj-title">
+                <div class="ul-wapper">
+                    <ul class="tabs clearfix">
+                    </ul>
+                </div>
+            </div>
+            <div class="searchbtn">
+                <div class="icon-search">
+                </div>
+            </div>
+            <div class="searchbox" style="width: 375px; display: none;">
+                <div class="formsch clearfix">
+                    <form method="get" action="baicai.aspx">
+                        <div class="txt">
+                            <input type="search" name="key" value="" onfocus="delInput();" oninput="delInput();" class="border-img" placeholder="请输入搜索关键词" style="width: 317px;">
+                            <a href="javascript:;" class="a-delput"></a>
+                        </div>
+                        <div class="smt">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bcj-list">
+        </div>
+    </main>
+    <!--底部区域--> 
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a>
+            --掌上比价平台
+        </p>
+        <p>
+            m.manmanbuy.com
+        </p>
+    </footer>
+    <script type="text/html" id="baicaijiaTitleTmp">
+        <div class="ul-wapper">
+            <ul class="tabs clearfix">
+            {{each result as value i}}
+            <li class="" data-titleid="{{value.titleId}}">
+                <a href="#">{{value.title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+        </div>
+    </script>
+    <script type="text/html" id="baicaijiaProductTmp">
+      <ul>
+          {{each result as value i}}
+          <li class="ui-border-tb ">
+                <a biz-itemid="538754112089" class="gobuy" isconvert="1" href="#" target="_blank"></a>
+                <div class="pic"><i></i>{{#value.productImg}}</div>
+                <div class="inf">
+                    <div class="i">
+                        <div class="t">{{#value.productName}}</div>
+                        <div class="pr">{{#value.productPrice}}
+                        </div>
+                    </div>
+                    <div class="o">
+                        <div class="bar clearfix">
+                            {{#value.productCouponRemain}}</div>
+                        <div class="b clearfix">
+                            <div class="q">{{#value.productCoupon}}</div>
+                            <div class="g">{{#value.productHref}}</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+          {{/each}}
+      </ul>
+    </script>  
+    <!--再引入Bootstrap的js-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+    <!--最后引入自己的js文件-->
+    <script src="js/baicaijia.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+#header {
+  height: 44px;
+  background-color: #ff841d;
+  padding: 10px;
+  position: relative;
+}
+#header > h1 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 44px;
+  font-weight: normal;
+  margin: -35px 52px;
+  height: 44px;
+  color: #ffffff;
+}
+#header > .back > .icon-back {
+  color: #ffffff;
+  font-size: 17px;
+}
+#header > .app {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+#header > .app > img {
+  height: 44px;
+}
+#section {
+  max-width: 960px;
+  margin: 0 auto;
+}
+#section h3 {
+  font-size: 18px;
+  margin: 10px auto 5px auto;
+  font-weight: 800;
+  text-align: left;
+  color: #5a5a5a;
+}
+#section h4 {
+  color: #ff6c00;
+  display: block;
+  font-size: 15px;
+}
+#section h5 span {
+  color: #999999;
+  margin: 0px 4px;
+}
+.info {
+  font-size: 16px;
+  line-height: 24px;
+  color: #606060;
+  padding-bottom: 20px;
+  position: relative;
+}
+.info .productInfo {
+  float: left;
+  margin-right: 140px;
+  margin-bottom: 20px;
+}
+.info .sm {
+  width: 120px;
+  float: right;
+  margin: 12px auto auto 10px;
+  overflow: hidden;
+}
+.info .sm img {
+  width: 120px;
+  height: 120px;
+  vertical-align: middle;
+}
+.info .lg {
+  text-align: center;
+}
+.info ul {
+  position: relative;
+  left: 50%;
+  margin-left: -60px;
+}
+.info ul li {
+  width: 120px;
+  border-bottom: 1px dashed #ccc;
+}
+.info ul li a span {
+  color: black;
+  font-size: 12px;
+}
+.info ul li a span strong {
+  font-weight: normal;
+  float: right;
+  color: red;
+}
+.info .buy {
+  padding: 20px;
+}
+.info .buy a {
+  text-align: center;
+  border: 1px solid #ccc;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  background-color: orange;
+  color: white;
+}
+.comment .cu-content-pl {
+  padding: 10px;
+}
+.comment .cu-content-pl .form {
+  border: 2px solid #ECEAE8;
+}
+.comment .cu-content-pl .form textarea {
+  width: 100%;
+  border: 0;
+}
+.comment .cu-content-pl .form .ctrl {
+  height: 40px;
+  border-top: 1px solid #ccc;
+}
+.comment .cu-content-pl .form .ctrl input {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ff841d;
+  float: right;
+  border: 0;
+}
+.comment .cu-content-pl .list .ui-border-b {
+  overflow: hidden;
+}
+.comment .cu-content-pl .list .ui-border-b .userimg {
+  float: left;
+}
+.comment .cu-content-pl .list .ui-border-b .userimg img {
+  width: 40px;
+  height: 40px;
+}
+.comment .cu-content-pl .list .ui-border-b .con {
+  float: left;
+  margin-left: 10px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--先引入第三方的框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/inlanddiscount.less">
+    <!--编译less的js-->
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <div class="back">
+            <a href="#" class="icon-back">
+                <
+            </a>
+        </div>
+        <h1>
+           国内折扣
+        </h1>
+        <a href="#" class="app">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <!-- 国内折扣的列表的主体内容盒子 -->
+    <main id="recommen-product">
+        <!-- 国内折扣商品列表盒子 -->
+        <div class="inland-discount-list cu-friend">
+        </div>
+    </main>
+   
+    <!--底部区域--> 
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a>
+            --掌上比价平台
+        </p>
+        <p>
+            m.manmanbuy.com
+        </p>
+    </footer>
+  <!--国内折扣商品列表模板 -->
+    <script type="text/html" id="discountProductTmp">
+        <ul>
+            {{each result as value i}}
+            <li class="border-img">
+                <a href="discount.html?productid={{value.productId}}" title="你萌死了">
+                    <div class="img">{{#value.productImg}}</div>
+                    <div class="title">{{value.productName}}</div>
+                    <div class="subtit">{{value.productPrice}}</div>
+                    <div class="info">
+                        <div class="mall">{{value.productFrom}} | {{value.productTime}}</div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>   
+    <!--再引入Bootstrap的js-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+    <!--最后引入自己的js文件-->
+    <script src="js/inlanddiscount.js"></script>
+</body>
+</html>
